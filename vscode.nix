@@ -24,6 +24,7 @@ in {
       };
 
       services.vscode-remote-workaround.script = ''
+        echo "Replacing node with link to ${cfg.package}"
         for i in ~/.vscode-server/bin/*; do
           if [ -d "$i" ]; then
             echo "Fixing vscode-server in $i..."
